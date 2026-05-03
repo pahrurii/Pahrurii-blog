@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.main {
+    color: white;
+    background-color: lightblue;
+    font-family: 'orbitron', sans-serif;
+    font-size: 48px;
+}
+
+.text {
+    color: black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    background-image: url('./images/windows_vista_37.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
