@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click counter - Pahrinism</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="centered-div">
+        <h1 class="about">click counter</h1>
+
+        <!-- Button -->
+        <button id="btn">click</button>
+
+        <!-- reset-->
+        <button id="resetbtn">reset</button>
+
+        <!-- Counter -->
+        <p id="count">0</p>
+    </div>
+
+
+
+    <!-- JavaScript -->
+<script>
+    let counter = 0;
+
+    const button = document.getElementById("btn");
+    const resetButton = document.getElementById("resetbtn");
+    const count = document.getElementById("count");
+
+    // tambah angka
+    button.addEventListener("click", function () {
+        counter++;
+        count.textContent = counter;
+    });
+
+    // reset angka
+    resetButton.addEventListener("click", function () {
+        counter = 0;
+        count.textContent = counter;
+    });
+
+    
+</script>
+<p class="text">
+    *note: if you leave this page, all your progress will be lost
+</p>
+<a href="../index.html">go back</a>
+</body>
+</html>

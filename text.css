@@ -8,7 +8,8 @@
 }
 
 .text {
-    color: black;
+    color: white;
+    text-shadow: 2px 2px 5px black;
     font-family: 'orbitron', sans-serif;
     font-size: 15px;
 }
@@ -26,4 +27,30 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+.my-images {
+    width: 370px;
+}
+
+.title {
+    color: black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 48px;
+}
+
+.page-link a {
+    margin-right: 20px;
+    color: blueviolet;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.epstein a {
+    margin-right: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
 }
