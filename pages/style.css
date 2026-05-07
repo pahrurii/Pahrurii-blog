@@ -8,11 +8,23 @@
 }
 
 button {
-    height: 120px;
     width: 120px;
-    padding: 10px;
-    border: 2px solid mediumslateblue;
-    margin: 10px;
+    height: 120px;
+
+    background: #222;
+    color: white;
+
+    border: 3px solid #666;
+    border-radius: 14px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    box-shadow:
+      inset -2px -2px 4px #000,
+      inset 2px 2px 4px #555;
+
+    user-select: none;
 }
 
 body {
@@ -22,7 +34,7 @@ body {
 }
 
 body {
-    background-image: url('/images/materialdictionary149_37.jpg');
+    background-image: url('/images/grass.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,8 +42,30 @@ body {
 }
 
 .text {
-    color: rgb(29, 98, 116);
-    background-color: lightblue;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.title {
+    color: black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 48px;
+}
+
+.page-link a {
+    margin-right: 20px;
+    color: blueviolet;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.epstein a {
+    margin-right: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
     font-family: 'orbitron', sans-serif;
     font-size: 15px;
 }

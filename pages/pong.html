@@ -10,12 +10,57 @@
   }
 
   body {
-    background: black;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  canvas {
+  width: 95vw;
+  max-width: 750px;
+  height: auto;
+
+  border: 2px solid white;
+  }
+
+  .mobile-controls {
+  margin-top: 20px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.control-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-box button {
+  width: 70px;
+  height: 70px;
+
+  font-size: 28px;
+
+  background: #222;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+.control-box button:active {
+  background: #555;
+}
+
   </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
     <div class="centered-div">
@@ -26,6 +71,53 @@
 
 <body>
 <canvas width="750" height="585" id="game"></canvas>
+<div class="mobile-controls">
+
+<!-- LEFT PLAYER -->
+<div class="control-box">
+  <p>P1</p>
+
+  <button
+    ontouchstart="leftPaddle.dy = -paddleSpeed"
+    ontouchend="leftPaddle.dy = 0"
+    onmousedown="leftPaddle.dy = -paddleSpeed"
+    onmouseup="leftPaddle.dy = 0">
+    ▲
+  </button>
+
+  <button
+    ontouchstart="leftPaddle.dy = paddleSpeed"
+    ontouchend="leftPaddle.dy = 0"
+    onmousedown="leftPaddle.dy = paddleSpeed"
+    onmouseup="leftPaddle.dy = 0">
+    ▼
+  </button>
+</div>
+
+<!-- RIGHT PLAYER -->
+<div class="control-box">
+  <p>P2</p>
+
+  <button
+    ontouchstart="rightPaddle.dy = -paddleSpeed"
+    ontouchend="rightPaddle.dy = 0"
+    onmousedown="rightPaddle.dy = -paddleSpeed"
+    onmouseup="rightPaddle.dy = 0">
+    ▲
+  </button>
+
+  <button
+    ontouchstart="rightPaddle.dy = paddleSpeed"
+    ontouchend="rightPaddle.dy = 0"
+    onmousedown="rightPaddle.dy = paddleSpeed"
+    onmouseup="rightPaddle.dy = 0">
+    ▼
+  </button>
+</div>
+
+
+</div>
+
 <script>
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -199,6 +291,9 @@ document.addEventListener('keyup', function(e) {
 });
 
 // start the game
+document.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+}, { passive: false });
 requestAnimationFrame(loop);
 </script>
 

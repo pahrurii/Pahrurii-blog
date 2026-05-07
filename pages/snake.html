@@ -3,6 +3,9 @@
 <head>
   <title>Basic Snake HTML Game</title>
   <meta charset="UTF-8">
+
+  <h1 class="about">snake</h1>
+
   <style>
   html, body {
     height: 100%;
@@ -10,7 +13,7 @@
   }
 
   body {
-    background: black;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,18 +21,90 @@
   canvas {
     border: 1px solid white;
   }
+
+    .nokia-controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .middle-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .nokia-btn {
+    width: 70px;
+    height: 70px;
+
+    background: #222;
+    color: white;
+
+    border: 3px solid #666;
+    border-radius: 14px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    box-shadow:
+      inset -2px -2px 4px #000,
+      inset 2px 2px 4px #555;
+
+    user-select: none;
+  }
+
+  .nokia-btn:active {
+    transform: scale(0.95);
+    background: #444;
+}
+
   </style>
 </head>
 
-    <div class="centered-div">
-        <h1 class="about">nokia</h1>
-   </div>
 
+<canvas width="400" height="400" id="game"></canvas>
+
+<div class="nokia-controls">
+
+  <button class="nokia-btn up"
+    ontouchstart="setDirection('up')"
+    onclick="setDirection('up')">
+    ▲
+  </button>
+
+  <div class="middle-row">
+
+    <button class="nokia-btn"
+      ontouchstart="setDirection('left')"
+      onclick="setDirection('left')">
+      ◀
+    </button>
+
+    <button class="nokia-btn"
+      ontouchstart="setDirection('down')"
+      onclick="setDirection('down')">
+      ▼
+    </button>
+
+    <button class="nokia-btn"
+      ontouchstart="setDirection('right')"
+      onclick="setDirection('right')">
+      ▶
+    </button>
+
+  </div>
+</div>
+
+
+
+</body>
 
 <link rel="stylesheet" href="./style.css">
 
 <body>
-<canvas width="400" height="400" id="game"></canvas>
+
 <script>
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -69,7 +144,7 @@ function loop() {
   requestAnimationFrame(loop);
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
+  if (++count < 6) {
     return;
   }
 
@@ -80,20 +155,22 @@ function loop() {
   snake.x += snake.dx;
   snake.y += snake.dy;
 
-  // wrap snake position horizontally on edge of screen
-  if (snake.x < 0) {
-    snake.x = canvas.width - grid;
-  }
-  else if (snake.x >= canvas.width) {
-    snake.x = 0;
-  }
+  if (
+    snake.x < 0 ||
+    snake.x >= canvas.width ||
+    snake.y < 0 ||
+    snake.y >= canvas.height
+  ) {
+    
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
 
-  // wrap snake position vertically on edge of screen
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
+    apple.x = getRandomInt(0,25) * grid;
+    apple.y = getRandomInt(0,25) * grid;
   }
 
   // keep track of where snake has been. front of the array is always the head
@@ -105,11 +182,11 @@ function loop() {
   }
 
   // draw apple
-  context.fillStyle = 'red';
+  context.fillStyle = 'yellow';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
   // draw snake one cell at a time
-  context.fillStyle = 'green';
+  context.fillStyle = 'lime';
   snake.cells.forEach(function(cell, index) {
 
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
@@ -172,9 +249,48 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+function setDirection(direction) {
+
+  if (direction === 'left' && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+
+  else if (direction === 'up' && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+
+  else if (direction === 'right' && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+
+  else if (direction === 'down' && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+}
+
+document.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+}, { passive: false });
+
+
+
 // start the game
 requestAnimationFrame(loop);
 </script>
-<a href="../index.html">go back</a>
+
+
+<div class="text">
+  controls: arrow keys for pc
+</div>
+
+<p class="page-link">
+  <a href="../index.html">go back</a>
+</p>
+
+
 </body>
 </html>
