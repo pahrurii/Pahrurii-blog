@@ -54,3 +54,36 @@ body {
     font-family: 'orbitron', sans-serif;
     font-size: 15px;
 }
+
+.youtube a {
+     margin-right: 20px;
+    color: red;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.tumblr a {
+     margin-right: 20px;
+    color: darkblue;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.toyhouse a {
+     margin-right: 20px;
+    color: black;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.strawpage a {
+     margin-right: 20px;
+    color: darkred;
+    text-shadow: 2px 2px 5px black;
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+}
+
