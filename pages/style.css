@@ -45,7 +45,7 @@ html, body {
 }
 
 body {
-    background-image: url('/images/windows_vista_37.jpg');
+    background-image: url("../images/windows_vista_37.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -117,4 +117,32 @@ body {
     text-shadow: 2px 2px 5px black;
     font-family: 'orbitron', sans-serif;
     font-size: 15px;
+}
+
+.small img {
+    width: 200px;
+}
+
+.big img {
+    width: 500px;
+}
+
+.banner img {
+    width: 600px;
+}
+
+.portrait img {
+    width: 400px
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.border img {
+  border: 5px solid #333;
+
 }
