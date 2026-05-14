@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frutiger Aero Style</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+
+    /* background fullscreen */
+    background-image: url("/images/windows_vista_37.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* kotak utama */
+.container{
+    width: 900px;
+    height: 650px;
+
+    background: rgba(0,0,0,0.7);
+
+    border-radius: 35px;
+
+    border: 2px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.8),
+    inset 0 0 15px rgba(255,255,255,0.1);
+
+    overflow:hidden;
+}
+
+/* header */
+.header{
+    height:80px;
+
+    background: linear-gradient(
+        to bottom,
+        #4a4a4a,
+        #111
+    );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:30px;
+
+    font-size:36px;
+}
+
+/* isi */
+.main{
+    display:flex;
+    height:calc(100% - 80px);
+}
+
+/* sidebar kiri */
+.sidebar{
+    width:180px;
+
+    background: rgba(20,20,20,0.8);
+    margin-right: 20px;
+  
+    font-family: 'orbitron', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+
+    padding:15px;
+}
+
+/* tombol menu */
+.menu{
+    background: linear-gradient(
+        to bottom,
+        #555,
+        #222
+    );
+
+    color:white;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    border:1px solid #666;
+}
+
+.menu:hover{
+    background: linear-gradient(
+        to bottom,
+        #66cc66,
+        #228822
+    );
+}
+
+/* content kanan */
+.content{
+    flex:1;
+
+    padding:20px;
+
+    color:white;
+
+    overflow:auto;
+}
+
+/* banner */
+.banner{
+    width:100%;
+    height:220px;
+
+    background-image:url("/images/Quantum_Fluctuations.gif");
+    background-size:cover;
+    background-position:center;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        Pahrix
+    </div>
+
+    <div class="main">
+
+        <div class="sidebar">
+
+            <div class="menu">Introduction</div>
+            <div class="menu"><a href="/pages/click.html">To CLICK COUNTER</a></div>
+            <div class="menu">Resources</div>
+            <div class="menu">Games</div>
+            <div class="menu">Videos</div>
+
+        </div>
+
+        <div class="content">
+
+            <div class="banner"></div>
+
+            <img src="/images/puhri_wave.gif" class="my-images" alt="puhri wave">
+            
+            <h1>Welcome</h1>
+
+            <p>
+                just a test style lmao
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
