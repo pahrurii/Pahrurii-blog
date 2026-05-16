@@ -1,37 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-.about {
-    color: white;
-    background-color: lightblue;
-    font-family: 'orbitron', sans-serif;
-    font-size: 48px;
+body{
+    margin:0;
+    font-family:Orbitron, sans-serif;
+    background:#111;
+    color:white;
 }
 
-button {
-    height: 120px;
-    width: 120px;
-    padding: 10px;
-    border: 2px solid mediumslateblue;
-    margin: 10px;
+header{
+    background:#222;
+    padding:10px 30px 10px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow: inset -5px -5px 5px black;
+
+    border-bottom:2px solid #444;
 }
 
-body {
-    background: #fff;
+.header-img{
+    width: 100px
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:cyan;
+}
+
+.main-img{
+    width: 750px;
+    padding: 50px 50px;
+    max-width: 100%;
+    float: left;
+
+}
+
+img{
+    float: left;
+}
+
+.about{
+    padding: 10px 10px;
     display: flex;
-    flex-direction: column;
-}
-
-body {
-    background-image: url('/images/materialdictionary149_37.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.text {
-    color: rgb(29, 98, 116);
-    background-color: lightblue;
-    font-family: 'orbitron', sans-serif;
-    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10px 30px;
 }
